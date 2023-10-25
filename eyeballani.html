@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+
+<div class="main">
+  <div class="eyes" >
+      <div class="eye">  <div class="ball">  </div> </div>
+      <div class="eye">  <div class="ball">  </div> </div>
+      <div>             <div class="smile">  </div> </div>
+  </div>
+</div>
+
+<script>
+  var balls = document.getElementsByClassName("ball");
+
+  document.onmousemove = function(){
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+
+    for(var i=0; i<2;i++){
+      balls[i].style.left = x;
+      balls[i].style.top = y;
+      balls[i].style.transform = "translate(-"+x+",-"+y+")";
+    }
+  }
+</script>
+
+
+<style>
+  .main{
+    border: 2px solid rgb(6, 5, 5);
+    border-radius: 400px;
+    height: 300px;
+    width: 300px;
+    margin: 160px 30px;
+    display: block;
+    background-color: yellow;
+  }
+  /* improtant */
+  .eyes{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110%;
+    text-align: center;
+    display: flex;
+    left: 75px;
+
+  }
+
+  /* improtannt */
+  .eye{
+    border: 2px solid rgb(6, 5, 5);
+    width: 70px;
+    height: 60px;
+    background: #fff;
+    margin: 20px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* improtannt */
+  
+  .ball{
+    width: 10px;
+    height: 10px;
+    background: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 15px solid #333;
+  }
+  
+
+  .smile{
+    border: 2px solid rgb(6, 5, 5);
+    width: 140px;
+    height: 3px;
+    background: rgb(227, 33, 62);
+    margin: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: 90%;
+    right: 110%;
+
+  }
+  </style>
+
+  </body>
+</html>
